@@ -8,6 +8,20 @@ import subprocess
 start_date = datetime.datetime(2000, 1, 1)
 start_unix = datetime.datetime.timestamp(start_date)
 
+
+# list of known large commits
+large_commit_hash_whitelist = [
+	# homalg_project
+	"196077343639b5aec6b0296ccb61c83d3d009f29",
+	"f75b4964a6690075303120b52c10e885a66f161c",
+
+	# CAP_project
+	"f4297869ede8b845cd84843b73007dae2cb58324",
+	"81590911570c8dcb4865a855a0e289206d37323e",
+	"c66fb5a1abe7319744d7fc6979180116bcdcd5ac",
+	"f522770f2a8b7698f296dee32c66111e96f40bc2",
+]
+
 def shell_run(command):
 	print("(" + command + ")")
 	return subprocess.check_output(command, text=True, shell=True)
@@ -134,12 +148,13 @@ for repo in repos:
 		if len(lines) > 0 and "changed" in lines[0]:
 			nextline = lines.pop(0)
 			diff = getdelta(nextline)
+			# fixup CAP commit 7da8b677a43c48706bfec06dda584e485f1c68d3
+			if commit_hash == "7da8b677a43c48706bfec06dda584e485f1c68d3":
+			    diff = 5081
 			if commit_hash not in blacklist:
-				if abs(diff) >= 10000:
-					print("commit " + commit_hash + " in repo " + repo + " has large diff: " + str(diff))
-				# fixup CAP commit 7da8b677a43c48706bfec06dda584e485f1c68d3
-				if commit_hash == "7da8b677a43c48706bfec06dda584e485f1c68d3":
-					diff = 5081
+				if abs(diff) >= 10000 and commit_hash not in large_commit_hash_whitelist:
+					print("Commit " + commit_hash + " in repo " + repo + " has large diff: " + str(diff))
+					exit(1)
 				diffs[timestamp] += diff
 				cumulated_lines += diff
 	
