@@ -58,10 +58,13 @@ cd repos
 
 for rep_path in "${paths[@]}"
 do
-    rep_name=$(echo $rep_path| cut -d'/' -f 5)
+	rep_name=$(echo $rep_path| cut -d'/' -f 5)
 
 	if [ -d ${rep_name} ]; then
-		echo "${rep_name} already exists"
+		echo "${rep_name} already exists, pulling"
+		cd ${rep_name}
+		git pull
+		cd ..
 	else
 		echo "Cloning $rep_path"
 		git clone ${rep_path}
