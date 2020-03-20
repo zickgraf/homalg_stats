@@ -179,7 +179,8 @@ for timestamp in sorted(diffs.keys()):
 		f.write("%d %d\n" % (timestamp, lines_of_code))
 f.close()
 
-f = open("lines_of_code.plot", "w")
+# png
+f = open("lines_of_code_png.plot", "w")
 f.write(
 """
 set terminal png size 1280,1024
@@ -201,4 +202,29 @@ plot 'lines_of_code.dat' using 1:2 w lines
 """)
 f.close()
 
-shell_run("gnuplot lines_of_code.plot")
+shell_run("gnuplot lines_of_code_png.plot")
+
+# svg
+f = open("lines_of_code_svg.plot", "w")
+f.write(
+"""
+set terminal svg size 1280,1024
+set size 1.0,1.0
+set output 'lines_of_code.svg'
+unset key
+set xrange [1167606000:]
+set xtics 1167606000,31536000
+set yrange [0:]
+set xdata time
+set timefmt "%s"
+set format x "%Y-%m-%d"
+set grid x
+set grid y
+set ylabel "Lines"
+set xtics rotate
+set bmargin 6
+plot 'lines_of_code.dat' using 1:2 w lines
+""")
+f.close()
+
+shell_run("gnuplot lines_of_code_svg.plot")
