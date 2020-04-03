@@ -63,7 +63,8 @@ do
 	if [ -d ${rep_name} ]; then
 		echo "${rep_name} already exists, pulling"
 		cd ${rep_name}
-		git pull
+		git fetch
+		git reset --hard origin/master
 		cd ..
 	else
 		echo "Cloning $rep_path"
