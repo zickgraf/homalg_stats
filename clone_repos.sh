@@ -24,6 +24,7 @@ declare -a paths=(
 	"https://github.com/homalg-project/LoopIntegrals"
 	"https://github.com/homalg-project/Locales"
 	"https://github.com/homalg-project/MatroidGeneration"
+	"https://github.com/homalg-project/OscarForHomalg"
 	"https://github.com/homalg-project/ParallelizedIterators"
 	"https://github.com/homalg-project/PrimaryDecomposition"
 	"https://github.com/homalg-project/Sheaves"
