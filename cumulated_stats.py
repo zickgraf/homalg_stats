@@ -80,9 +80,13 @@ for repo in repos:
 
 
 	if repo == "CAP_project":
+		# consider both branches of "The big Sebastian & Sebastian CAP merge" (7da8b677a43c48706bfec06dda584e485f1c68d3), the missing delta of 5081 lines is added explicitly below
 		new_lines = shell_run('git log --shortstat --reverse --topo-order --first-parent -m --pretty=format:"%H|%at" ^9d2b34252d1646b4c3d93fccbc97963f554e1d7f e9f9012004c40da3bb10805126033ef9ad6d08c2').split("\n")
 		lines.extend(new_lines)
+		# CAPCategoryOfProjectiveGradedModules has an unclean subtree merge
 		root_commit_hashes.remove("d75e0c53714949becd838f036f599de62ce03c42")
+		# CAPManual has an unclean subtree merge
+		root_commit_hashes.remove("0d68922f0df4bd3c393196c9e202bb9358f966a5")
 
 	if repo == "homalg_project":
 		root_commit_hashes.append("077a411c5b9482f7726526e97814d8216409e47e")
@@ -150,7 +154,7 @@ for repo in repos:
 			diff = getdelta(nextline)
 			# fixup CAP commit 7da8b677a43c48706bfec06dda584e485f1c68d3
 			if commit_hash == "7da8b677a43c48706bfec06dda584e485f1c68d3":
-			    diff = 5081
+				diff = 5081
 			if commit_hash not in blacklist:
 				if abs(diff) >= 10000 and commit_hash not in large_commit_hash_whitelist:
 					print("Commit " + commit_hash + " in repo " + repo + " has large diff: " + str(diff))
