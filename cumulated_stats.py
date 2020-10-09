@@ -14,6 +14,7 @@ large_commit_hash_whitelist = [
 	# homalg_project
 	"196077343639b5aec6b0296ccb61c83d3d009f29",
 	"f75b4964a6690075303120b52c10e885a66f161c",
+        "265addea76eb9bcf7c593e08d9ef64596f6120de",
 
 	# CAP_project
 	"f4297869ede8b845cd84843b73007dae2cb58324",
