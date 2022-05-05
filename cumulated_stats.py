@@ -193,8 +193,8 @@ set terminal png size 1280,1024
 set size 1.0,1.0
 set output 'lines_of_code.png'
 unset key
-set xrange [1167606000:]
-set xtics 1167606000,31536000
+set xrange [1451606400:]
+set xtics 1451606400,31536000
 set yrange [0:]
 set xdata time
 set timefmt "%s"
@@ -218,8 +218,8 @@ set terminal svg size 1280,1024
 set size 1.0,1.0
 set output 'lines_of_code.svg'
 unset key
-set xrange [1167606000:]
-set xtics 1167606000,31536000
+set xrange [1451606400:]
+set xtics 1451606400,31536000
 set yrange [0:]
 set xdata time
 set timefmt "%s"
