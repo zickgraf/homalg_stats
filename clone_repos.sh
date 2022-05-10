@@ -7,7 +7,7 @@ declare -a paths=(
 	"https://github.com/homalg-project/homalg_project"
 	"https://github.com/homalg-project/AlgebraicThomas"
 	"https://github.com/homalg-project/ArangoDBInterface"
-	"https://github.com/homalg-project/Bialgebroids"
+	"https://github.com/homalg-project/Algebroids"
 	"https://github.com/homalg-project/Blocks"
 	"https://github.com/homalg-project/CategoryConstructor"
 	"https://github.com/homalg-project/CategoriesWithAmbientObjects"
@@ -38,18 +38,9 @@ declare -a paths=(
 	"https://github.com/homalg-project/KnopCategoriesForCAP"
 
 	# Kamal und co
-	"https://github.com/homalg-project/QuotientCategories"
-	"https://github.com/homalg-project/StableCategories"
-	"https://github.com/homalg-project/FrobeniusCategories"
-	"https://github.com/homalg-project/ComplexesCategories"
-	"https://github.com/homalg-project/Bicomplexes"
-	"https://github.com/homalg-project/HomotopyCategories"
-	"https://github.com/homalg-project/DerivedCategories"
-	"https://github.com/homalg-project/ModelCategories"
-	"https://github.com/homalg-project/BBGG"
+	"https://github.com/homalg-project/HigherHomologicalAlgebra"
 	"https://github.com/homalg-project/NConvex"
 	#"https://github.com/homalg-project/CddInterface"
-	"https://github.com/homalg-project/TriangulatedCategories"
 
 	# Fabian und co
 	"https://github.com/homalg-project/FinSetsForCAP"
