@@ -137,9 +137,13 @@ for repo in repos:
 		timestamp = int(output)
 		diff = get_total_lines_at_commit(root_commit_hash)
 		if timestamp in diffs:
-			print("Error: duplicate timestamp: " + root_commit_hash)
-			exit(1)
-		diffs[timestamp] = diff
+			# homalg_project and Sheaves both have commit 94f248f7fa6e10811f2552fc5d834e61a05225cf, so this is expected if Sheaves is processed before homalg_project
+			if root_commit_hash != "94f248f7fa6e10811f2552fc5d834e61a05225cf":
+				print("Error: duplicate timestamp: " + root_commit_hash)
+				exit(1)
+		else:
+			diffs[timestamp] = 0
+		diffs[timestamp] += diff
 		cumulated_lines += diff
 		
 	while len(lines) > 0:
