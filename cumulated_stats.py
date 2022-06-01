@@ -22,6 +22,11 @@ large_commit_hash_whitelist = [
 	"c66fb5a1abe7319744d7fc6979180116bcdcd5ac",
 	"f522770f2a8b7698f296dee32c66111e96f40bc2",
 	"a7200b2d47c799cd9bb0f13f0fdea083985063a1",
+	"e1fd92b67f1a61dcb3bdcbbac701ee077dc42862", # import of CartesianCategories
+	"c55e5a38a08cad0588ab68b9bf96e9335f6499d9", # import of CartesianCategories
+
+	# Toposes
+	"6da9937cf6b4b7dec30bc2af305e65fd216deb06", # outsourcing CartesianCategories
 ]
 
 def shell_run(command):
@@ -89,6 +94,8 @@ for repo in repos:
 		root_commit_hashes.remove("d75e0c53714949becd838f036f599de62ce03c42")
 		# CAPManual has an unclean subtree merge
 		root_commit_hashes.remove("0d68922f0df4bd3c393196c9e202bb9358f966a5")
+		# CartesianCategories has an unclean subtree merge
+		root_commit_hashes.remove("84d3c54ae6b7529d7000efe8dcb984c15167f920")
 
 	if repo == "homalg_project":
 		root_commit_hashes.append("077a411c5b9482f7726526e97814d8216409e47e")
