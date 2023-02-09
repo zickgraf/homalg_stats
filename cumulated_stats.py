@@ -103,7 +103,11 @@ for repo in repos:
 		root_commit_hashes.append("3f12d921b278ce9494be80bb6811b4ca57f8f067")
 		root_commit_hashes.append("edf6b6ece376157cf6c17646c81f49966cc54a53")
 		root_commit_hashes.append("d6966aa8647f7c8324fe3b61422d59c767518644")
-	
+
+	if repo == "CategoricalTowers":
+		# ZariskiFrames contains an old subtree merge
+		root_commit_hashes.remove("1c4953267a1f9191d09e96f2c15f0b4aa587d37f")
+
 	cumulated_lines = 0
 
 	# for any root commit find merge with the initial commit of the linear history
