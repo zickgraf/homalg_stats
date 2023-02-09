@@ -25,8 +25,9 @@ large_commit_hash_whitelist = [
 	"e1fd92b67f1a61dcb3bdcbbac701ee077dc42862", # import of CartesianCategories
 	"c55e5a38a08cad0588ab68b9bf96e9335f6499d9", # import of CartesianCategories
 
-	# Toposes
-	"6da9937cf6b4b7dec30bc2af305e65fd216deb06", # outsourcing CartesianCategories
+	# CategoricalTowers
+	"6da9937cf6b4b7dec30bc2af305e65fd216deb06", # outsourcing CartesianCategories from Toposes
+	"cc473957ccec797900294a592e9f39cc5b516b8a", # clean up after subtree merges
 ]
 
 def shell_run(command):
