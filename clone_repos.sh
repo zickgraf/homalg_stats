@@ -12,6 +12,7 @@ declare -a paths=(
 	"https://github.com/homalg-project/ArangoDBInterface"
 	"https://github.com/homalg-project/Blocks"
 	"https://github.com/homalg-project/D-Modules"
+	"https://github.com/homalg-project/HeckeCategories"
 	"https://github.com/homalg-project/LessGenerators"
 	"https://github.com/homalg-project/LoopIntegrals"
 	"https://github.com/homalg-project/MatroidGeneration"
