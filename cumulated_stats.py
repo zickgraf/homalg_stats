@@ -107,6 +107,8 @@ for repo in repos:
 	if repo == "CategoricalTowers":
 		# ZariskiFrames contains an old subtree merge
 		root_commit_hashes.remove("1c4953267a1f9191d09e96f2c15f0b4aa587d37f")
+		# QuotientCategories originally was part of HigherHomologicalAlgebra
+		root_commit_hashes.remove("cf9f50fcbe7f620d8c0f5f3d589d02138f9ef663")
 
 	cumulated_lines = 0
 
