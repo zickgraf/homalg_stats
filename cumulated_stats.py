@@ -29,6 +29,7 @@ large_commit_hash_whitelist = [
 	# CategoricalTowers
 	"6da9937cf6b4b7dec30bc2af305e65fd216deb06", # outsourcing CartesianCategories from Toposes
 	"cc473957ccec797900294a592e9f39cc5b516b8a", # clean up after subtree merges
+	"bfc48d76fd706db23d444900842bf7fcd75fc893", # add cached precompiled functions
 ]
 
 def shell_run(command):
